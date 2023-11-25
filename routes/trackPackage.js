@@ -1,4 +1,3 @@
-// routes/trackPackage.js
 const db = require('../database');
 
 module.exports = (req, res) => {

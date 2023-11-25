@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sendnemt.dk - Pakke Registrering</title>
+    <style>
+        /* Grundlæggende CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: 20px 0;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pakke Registrering</h1>
+    <form action="/send_package" method="post">
+        <label for="sender_address">Afsender Adresse:</label>
+        <input type="text" id="sender_address" name="sender_address" required><br>
+
+        <label for="receiver_address">Modtager Adresse:</label>
+        <input type="text" id="receiver_address" name="receiver_address" required><br>
+
+        <label for="package_size">Pakke Størrelse:</label>
+        <input type="text" id="package_size" name="package_size" required><br>
+
+        <label for="weight">Vægt:</label>
+        <input type="number" id="weight" name="weight" required><br>
+
+        <input type="submit" value="Send Pakke">
+    </form>
+
+    <h2>Track din Pakke</h2>
+    <form action="/track_package" method="get">
+        <label for="package_id">Pakke ID:</label>
+        <input type="text" id="package_id" name="package_id" required>
+        <input type="submit" value="Track Pakke">
+    </form>
+    <script src="../routes/sendPackage.js"></script>
+    <script src="../routes/trackPackage.js"></script>
+</body>
+</html>
